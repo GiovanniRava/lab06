@@ -55,10 +55,11 @@ public final class ArithmeticService {
      * @return the result of the process
      */
     public String process() {
-        if (commandQueue.isEmpty()) {
+        try{
+            if (commandQueue.isEmpty()) {
             throw new IllegalStateException("No commands sent, no result available");
         
-        }
+            }
         while (commandQueue.size() != 1) {
             final var nextMultiplication = commandQueue.indexOf(TIMES);
             final var nextDivision = commandQueue.indexOf(DIVIDED);
@@ -89,10 +90,14 @@ public final class ArithmeticService {
             throw new IllegalStateException("Invalid result of operation: " + finalResult);
         }
         return finalResult;
+        }
         /*
          * The commandQueue should be cleared, no matter what, when the method exits
          * But how?
          */
+        finally{
+                commandQueue.clear();
+        }
     }
 
     private void computeAt(final int operatorIndex) {

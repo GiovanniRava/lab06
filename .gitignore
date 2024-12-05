@@ -7,4 +7,7 @@
         64-design-with-maps/bin/
         65-implement-generic-class/.gradle/
         65-implement-generic-class/bin/
-
+*.class
+*.properties
+*.lock
+*.bin

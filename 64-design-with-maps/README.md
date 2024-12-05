@@ -6,3 +6,4 @@
    Follow the instructions in the class comments, and build the implementation.
 4. Modify `TestSocialNetworkUser` as described in the `TODO` comment, run the test, and make sure that it works correctly.
 If it does not, fix the implementation of `SocialNetworkUserImpl`.
+\
